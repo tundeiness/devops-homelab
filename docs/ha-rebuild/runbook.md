@@ -26,3 +26,18 @@ Converting existing single-server k3s cluster (SQLite) to 3-server etcd HA clust
 ## Phase 6 - Rejoin multipass as worker
 ## Phase 7 - Verify HA
 ## Phase 8 - Restore workloads
+
+## Completion
+Date: 2026-09-25
+Status: COMPLETE
+
+## Final cluster state
+| Node | IP | OS | Arch | Role |
+|---|---|---|---|---|
+| kali-raspberrypi | 192.168.1.150 | Kali 2026.3 | arm64 | control-plane,etcd |
+| pi2 | 192.168.1.127 | Ubuntu 26.04 | arm64 | control-plane,etcd |
+| ubuntu-optiplex-7040 | 192.168.1.11 | Ubuntu 26.04 | amd64 | control-plane,etcd |
+| multipass | 192.168.252.2 | Ubuntu 24.04 | amd64 | worker |
+
+## etcd quorum
+3 members, quorum=2, survives any 1 node failure
